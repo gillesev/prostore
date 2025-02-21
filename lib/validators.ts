@@ -19,3 +19,9 @@ export const insertProductSchema = z.object({
     numReviews: z.coerce.number()
 });
 
+// Schema for User sign-in
+export const signInFormSchema = z.object({
+    email: z.string().email('invalid email address.'),
+    password: z.string().min(6, 'password must be at least 6 characters.')
+});
+
